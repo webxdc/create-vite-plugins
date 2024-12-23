@@ -5,6 +5,10 @@
   "type": "module",
   "license": "MIT",
   "author": "adbenitez",
+  "keywords": [
+    "webxdc",
+    "deltachat"
+  ],
   "bin": {
     "create-webxdc": "index.js"
   },
