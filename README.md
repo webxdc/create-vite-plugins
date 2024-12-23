@@ -6,7 +6,7 @@
 
 Vite project template scaffolding for [Webxdc](https://webxdc.org) development.
 
-## Scaffolding Your First Vite Project
+## Scaffolding Your First Webxdc Project
 
 With NPM:
 
