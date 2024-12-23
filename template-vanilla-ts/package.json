@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 3000",
+    "fix": "prettier --write .",
+    "check": "prettier --check .",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@webxdc/types": "latest",
+    "@webxdc/vite-plugins": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}

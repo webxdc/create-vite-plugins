@@ -1,18 +1,38 @@
 {
-  "private": true,
+  "name": "@webxdc/create-vite-plugins",
+  "description": "Webxdc project scaffolding",
+  "version": "1.0.0",
   "type": "module",
-  "scripts": {
-    "start": "vite --port 3000",
-    "emulator": "concurrently \"npm start\" \"webxdc-dev run http://localhost:3000\"",
-    "fix": "prettier --write .",
-    "check": "prettier --check .",
-    "build": "vite build"
+  "license": "MIT",
+  "author": "adbenitez",
+  "bin": {
+    "create-webxdc": "index.js"
   },
+  "files": [
+    "index.js",
+    "template-*"
+  ],
+  "scripts": {
+    "start": "node ./index.js",
+    "fix": "prettier --write .",
+    "check": "prettier --check"
+  },
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webxdc/create-vite-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webxdc/create-vite-plugins/issues"
+  },
+  "homepage": "https://github.com/webxdc/create-vite-plugins",
   "devDependencies": {
-    "concurrently": "latest",
-    "prettier": "latest",
-    "vite": "latest",
-    "@webxdc/webxdc-dev": "latest",
-    "@webxdc/vite-plugins": "latest"
+    "cross-spawn": "^7.0.6",
+    "minimist": "^1.2.8",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2",
+    "prettier": "latest"
   }
 }

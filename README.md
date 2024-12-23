@@ -1,72 +1,49 @@
-# WebXDC Vite Template [![CI](https://github.com/webxdc/webxdc-vite/actions/workflows/ci.yml/badge.svg)](https://github.com/webxdc/webxdc-vite/actions/workflows/ci.yml) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+# Webxdc Vite Template
 
-A minimalist Vite project template for [WebXDC](https://webxdc.org) development.
+[![npm package](https://img.shields.io/npm/v/@webxdc/create-vite-plugins.svg)](https://npmjs.com/package/@webxdc/create-vite-plugins)
+[![CI](https://github.com/webxdc/create-vite-plugins/actions/workflows/ci.yml/badge.svg)](https://github.com/webxdc/create-vite-plugins/actions/workflows/ci.yml)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## Features
+Vite project template scaffolding for [Webxdc](https://webxdc.org) development.
 
-- ⚡️ Fast development with [Vite](https://github.com/vitejs/vite) and [pnpm](https://pnpm.js.org/)
+## Scaffolding Your First Vite Project
 
-- 📱 Integrated [WebXDC emulator](https://github.com/webxdc/webxdc-dev) to test your WebXDC right on the browser while developing,
-  and [Eruda](https://github.com/liriliri/eruda) to debug inside Delta Chat.
+With NPM:
 
-- 📝 Code formatting with [Prettier](https://github.com/prettier/prettier)
-
-- 📦 Automatically minify, build and release your `.xdc` file
-
-- 🦕 Automatically support legacy/old browsers
-
-## Usage
-
-### Installing Dependencies
-
-After cloning this repo, install dependecies:
-
-```
-pnpm i
+```bash
+$ npm create @webxdc/vite-plugins@latest
 ```
 
-### Checking code format
+With PNPM:
 
-```
-pnpm check
-```
-
-### Testing the app in the browser
-
-To test your work in your browser (with hot reloading!) while developing:
-
-```
-pnpm start
-# Alternatively to test in a more advanced WebXDC emulator:
-pnpm emulator
+```bash
+$ pnpm create @webxdc/vite-plugins
 ```
 
-### Building
+With Yarn:
 
-To package the WebXDC file:
-
-```
-pnpm build
+```bash
+$ yarn create @webxdc/vite-plugins
 ```
 
-To package the WebXDC with developer tools inside to debug in Delta Chat, set the `NODE_ENV`
-environment variable to "debug":
+Then follow the prompts!
 
-```
-NODE_ENV=debug pnpm build
-```
+You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Webxdc + TypeScript project, run:
 
-The resulting optimized `.xdc` file is saved in `dist-xdc/` folder.
+```bash
+# npm 7+, extra double-dash is needed:
+npm create @webxdc/vite-plugins@latest my-app -- --template vanilla-ts
 
-### Releasing
+# pnpm
+pnpm create @webxdc/vite-plugins my-app --template vanilla-ts
 
-To automatically build and create a new GitHub release with the `.xdc` file:
-
-```
-git tag -a v1.0.1
-git push origin v1.0.1
+# yarn
+yarn create @webxdc/vite-plugins my-app --template vanilla-ts
 ```
 
-## Try it now!
+Currently supported template presets include:
 
-[**Create a repo from this template on GitHub**](https://github.com/webxdc/webxdc-vite/generate).
+- `vanilla`
+- `vanilla-ts`
+
+You can use `.` for the project name to scaffold in the current directory.

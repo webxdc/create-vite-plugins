@@ -1,34 +1,31 @@
 name: CI
 
 on:
-  pull_request:
-    branches:
-      - master
-      - main
   push:
     branches:
-      - master
       - main
+      - master
     tags:
       - "v*.*.*"
+  pull_request:
+    branches:
+      - main
+      - master
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: npm install -g pnpm
-      - run: pnpm i
-      - run: pnpm check
-      - run: pnpm build
-
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/v')
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            Auto-generated release
-          prerelease: ${{ contains(github.event.ref, '-beta') }}
-          fail_on_unmatched_files: true
-          files: ./dist-xdc/*.xdc
+          node-version: 20.x
+          registry-url: "https://registry.npmjs.org"
+      - run: npm install -g pnpm
+      - run: pnpm install
+      - run: pnpm check
+      - name: Publish package to NPM
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
