@@ -28,8 +28,7 @@
     "url": "https://github.com/webxdc/create-vite-plugins/issues"
   },
   "homepage": "https://github.com/webxdc/create-vite-plugins",
-  "devDependencies": {
-    "cross-spawn": "^7.0.6",
+  "dependencies": {
     "minimist": "^1.2.8",
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2",
