@@ -26,6 +26,6 @@ jobs:
       - run: pnpm check
       - name: Publish package to NPM
         if: startsWith(github.ref, 'refs/tags/v')
-        run: pnpm publish --access public
+        run: pnpm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
